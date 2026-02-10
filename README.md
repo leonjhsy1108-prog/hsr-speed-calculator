@@ -72,20 +72,18 @@ A small window will open with all inputs available at once.
 
 # Output
 
-The calculator displays only:
+- The calculator displays only:
+  - Minimum required Speed: XXX
 
-Minimum required Speed: XXX
 
+- This value already accounts for:
+  - Mode
 
-This value already accounts for:
-
-- Mode
-
-- Turn structure
-
-- All advance effects
-
-- Ceiling behavior
+  - Turn structure
+    
+  - All advance effects
+    
+  - Ceiling behavior
 
 # Project Structure
 ```
