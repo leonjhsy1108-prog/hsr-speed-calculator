@@ -18,13 +18,6 @@ def total_action_value(mode: str, total_turns: int) -> int:
 
 
 def parse_custom_advance(raw: str) -> float:
-    """
-    Accepts:
-      24   -> 0.24
-      0.24 -> 0.24
-      0    -> 0.0
-      blank -> 0.0
-    """
     s = (raw or "").strip()
     if s == "":
         return 0.0
@@ -75,7 +68,6 @@ class App(tk.Tk):
 
         pad = {"padx": 8, "pady": 6}
 
-        # --- Core inputs ---
         core = ttk.LabelFrame(self, text="Core Inputs")
         core.grid(row=0, column=0, sticky="ew", **pad)
 
@@ -97,7 +89,6 @@ class App(tk.Tk):
         self.actions_var = tk.StringVar(value="2")
         ttk.Entry(core, textvariable=self.actions_var, width=10).grid(row=2, column=1, sticky="w", **pad)
 
-        # --- Advance inputs ---
         adv = ttk.LabelFrame(self, text="Advance Inputs")
         adv.grid(row=1, column=0, sticky="ew", **pad)
 
@@ -110,7 +101,6 @@ class App(tk.Tk):
             row=1, column=0, columnspan=2, sticky="w", **pad
         )
 
-        # --- Custom advances ---
         custom = ttk.LabelFrame(self, text="Custom Advance Options")
         custom.grid(row=2, column=0, sticky="ew", **pad)
 
@@ -121,7 +111,6 @@ class App(tk.Tk):
             self.custom_value_vars.append(var)
             ttk.Entry(custom, textvariable=var, width=10).grid(row=i, column=1, sticky="w", **pad)
 
-        # --- Bottom ---
         bottom = ttk.Frame(self)
         bottom.grid(row=3, column=0, sticky="ew", **pad)
 
@@ -140,7 +129,7 @@ class App(tk.Tk):
         self.mode_var.set("Forgotten Hall")
         self.turns_var.set("1")
         self.actions_var.set("2")
-        self.wind_var.set("0")   # RESET = 0
+        self.wind_var.set("0")   
         self.von_var.set(False)
         for v in self.custom_value_vars:
             v.set("0")
