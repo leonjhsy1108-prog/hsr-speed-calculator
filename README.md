@@ -30,7 +30,6 @@ Speed × total_action_value + total_advance ≥ required_action_value
 Run the program
 ```
 python hsr_speed_calculator.py
-
 ```
 
 A small window will open with all inputs available at once.
